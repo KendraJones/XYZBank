@@ -21,6 +21,15 @@ export class xyzbank extends BasePage {
     withdraw: By = By.xpath('/html/body/div/div/div[2]/div/div[4]/div/form/button')
     getAmount: By = By.xpath('//*[@id="anchor1"]/td[2]')
 
+    bankManager: By = By.xpath('/html/body/div/div/div[2]/div/div[1]/div[2]/button')
+    addCustomer: By = By.xpath('/html/body/div/div/div[2]/div/div[1]/button[1]')
+    firstname: By = By.xpath('/html/body/div/div/div[2]/div/div[2]/div/div/form/div[1]/input')
+    lastname: By = By.xpath('/html/body/div/div/div[2]/div/div[2]/div/div/form/div[2]/input')
+    postalcode: By = By.xpath('/html/body/div/div/div[2]/div/div[2]/div/div/form/div[3]/input')
+    addCustButton: By = By.xpath('/html/body/div/div/div[2]/div/div[2]/div/div/form/button')
+    homeButton: By = By. className('btn home')
+    lordV: By = By.xpath('//*[@id="userSelect"]/option[7]')
+
     constructor() {
         super({url: "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login"})
     };
@@ -38,5 +47,14 @@ export class xyzbank extends BasePage {
     };
     async getAmt() {
         return this.getText(this.getAmount)
-    }
+    };
+    async firstName(fName: string) {
+        return this.setInput(this.firstname, `${fName}`)
+    };
+    async lastName(lName: string) {
+        return this.setInput(this.lastname, `${lName}`)
+    };
+    async postalCode(pCode: string) {
+        return this.setInput(this.postalcode, `${pCode}`)
+    };
 };
