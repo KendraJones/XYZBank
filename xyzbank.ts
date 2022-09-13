@@ -27,8 +27,6 @@ export class xyzbank extends BasePage {
     lastname: By = By.xpath('/html/body/div/div/div[2]/div/div[2]/div/div/form/div[2]/input')
     postalcode: By = By.xpath('/html/body/div/div/div[2]/div/div[2]/div/div/form/div[3]/input')
     addCustButton: By = By.xpath('/html/body/div/div/div[2]/div/div[2]/div/div/form/button')
-    homeButton: By = By. className('btn home')
-    lordV: By = By.xpath('//*[@id="userSelect"]/option[7]')
 
     constructor() {
         super({url: "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login"})
