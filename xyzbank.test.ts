@@ -51,12 +51,12 @@ test('Testing both the ability to make a Withdrawal and then verifying the Trans
     await xyzBank.click(xyzBank.wdAmount)
     await xyzBank.WDAmount(25)
     await xyzBank.click(xyzBank.withdraw)
-    await xyzBank.driver.sleep(2000)
+    await xyzBank.driver.sleep(3000)
     await fs.writeFile(`${__dirname}/screenshots/withdrawal.png`, await xyzBank.driver.takeScreenshot(), 'base64', (e) => {
         if (e) console.error(e)
         else console.log("Screenshot Successful!")
     });
-    await xyzBank.driver.sleep(2800)
+    await xyzBank.driver.sleep(300)
     await xyzBank.click(xyzBank.transaction)
     let transctn = await xyzBank.getAmt()
     expect(transctn).toEqual('25')
